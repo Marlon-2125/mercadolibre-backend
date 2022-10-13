@@ -1,0 +1,13 @@
+services:
+
+  Apps.controllers.ProductGetController:
+    class: ../../controllers/ProductGetController
+    arguments: ["@Contexts.products.application.ProductManager"]
+
+  Contexts.products.application.ProductManager:
+    class: ../../../contexts/products/application/ProductManager
+    arguments: ["@Contexts.products.infrastructure.ProductRepository"]
+
+  Contexts.products.infrastructure.ProductRepository:
+    class: ../../../contexts/products/infrastructure/ProductRepository
+    arguments: [""]

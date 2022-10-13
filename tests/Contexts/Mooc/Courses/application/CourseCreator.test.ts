@@ -1,13 +1,13 @@
-import { CourseCreator } from '../../../../../src/Contexts/Mooc/Courses/application/CourseCreator';
-import { Course } from '../../../../../src/Contexts/Mooc/Courses/domain/Course';
+import { ProductManager } from '../../../../../src/contexts/products/application/ProductManager';
+import { Product } from '../../../../../src/contexts/products/domain/entities/Product';
 import { CourseRepositoryMock } from '../__mocks__/CourseRepositoryMock';
 
 let repository: CourseRepositoryMock;
-let creator: CourseCreator;
+let creator: ProductManager;
 
 beforeEach(() => {
   repository = new CourseRepositoryMock();
-  creator = new CourseCreator(repository);
+  creator = new ProductManager(repository);
 });
 
 describe('CourseCreator', () => {
@@ -17,7 +17,7 @@ describe('CourseCreator', () => {
     const name = 'some-name';
     const duration = 'some-duration';
 
-    const course = new Course({id, name, duration});
+    const course = new Product({id, name, duration});
 
     await creator.run(id, name, duration);
 

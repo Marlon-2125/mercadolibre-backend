@@ -1,6 +1,6 @@
-import { Server } from './server';
+import { Server } from './Server';
 
-export class MoocBackendApp {
+export class ProductsApp {
   server?: Server;
 
   async start() {
