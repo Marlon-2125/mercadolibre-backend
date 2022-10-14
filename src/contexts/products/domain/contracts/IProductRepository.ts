@@ -1,7 +1,7 @@
-import {Product} from '../entities/Product';
-
 export interface IProductRepository {
-  findById(id: string): Promise<Product>;
+  findById(id: string): Promise<any>;
 
-  findByTerm(term: string): Promise<Product[]>;
+  findDetailsById(id: string): Promise<any>;
+
+  findByTerm(term: string): Promise<any>;
 }

@@ -1,7 +1,8 @@
-import {Product} from '../entities/Product';
+import {ProductListDTO} from '../dto/ProductListDTO';
+import {ProductItemDTO} from '../dto/ProductItemDTO';
 
 export interface IProductManager {
-  searchById(id: string): Promise<Product>;
+  searchById(id: string): Promise<ProductItemDTO>;
 
-  searchByTerm(term: string): Promise<Product[]>;
+  searchByTerm(term: string): Promise<ProductListDTO>;
 }

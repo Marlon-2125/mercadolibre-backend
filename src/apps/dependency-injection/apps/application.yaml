@@ -1,8 +1,12 @@
 services:
 
-  Apps.controllers.ProductGetController:
-    class: ../../controllers/ProductGetController
+  Apps.controllers.ProductGetItemController:
+    class: ../../controllers/ProductGetItemController
     arguments: ["@Contexts.products.application.ProductManager"]
+
+  Apps.controllers.ProductListItemsController:
+    class: ../../controllers/ProductListItemsController
+    arguments: [ "@Contexts.products.application.ProductManager" ]
 
   Contexts.products.application.ProductManager:
     class: ../../../contexts/products/application/ProductManager
