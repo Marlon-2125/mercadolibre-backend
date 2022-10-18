@@ -1,11 +1,11 @@
 services:
 
   Apps.controllers.ProductGetItemController:
-    class: ../../controllers/ProductGetItemController
+    class: ../../../contexts/products/infrastructure/rest/controllers/ProductGetItemController
     arguments: ["@Contexts.products.application.ProductManager"]
 
   Apps.controllers.ProductListItemsController:
-    class: ../../controllers/ProductListItemsController
+    class: ../../../contexts/products/infrastructure/rest/controllers/ProductListItemsController
     arguments: [ "@Contexts.products.application.ProductManager" ]
 
   Contexts.products.application.ProductManager:

@@ -4,4 +4,6 @@ export interface IProductRepository {
   findDetailsById(id: string): Promise<any>;
 
   findByTerm(term: string): Promise<any>;
+
+  findCategory(categoryId: string): Promise<any>;
 }

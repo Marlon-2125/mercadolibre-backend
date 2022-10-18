@@ -20,4 +20,9 @@ export class ProductRepository implements IProductRepository {
     const url = URL_ENDPOINTS.MERCADOLIBRE_GET_LIST_ITEMS_BY_TERM.replace(':query', term);
     return await axios.get(url);
   }
+
+  async findCategory(categoryId: string): Promise<any> {
+    const url = URL_ENDPOINTS.MERCADOLIBRE_GET_CATEGORY.replace(':id', categoryId);
+    return await axios.get(url);
+  }
 }

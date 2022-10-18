@@ -1,5 +1,5 @@
-import {ProductListDTO} from '../dto/ProductListDTO';
-import {ProductItemDTO} from '../dto/ProductItemDTO';
+import {ProductListDTO} from '../../infrastructure/rest/controllers/dto/ProductListDTO';
+import {ProductItemDTO} from '../../infrastructure/rest/controllers/dto/ProductItemDTO';
 
 export interface IProductManager {
   searchById(id: string): Promise<ProductItemDTO>;
