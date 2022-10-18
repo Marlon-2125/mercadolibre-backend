@@ -21,7 +21,7 @@ export class ProductListItemsController implements Controller {
       res.status(httpStatus.OK).send(response);
     } catch (e: any) {
       this.logger.error('[Error in ProductListItemsController]: ' + JSON.stringify(e));
-      res.status(httpStatus.NOT_FOUND).send({error: {message: e.message}});
+      res.status(e.status).send({code: e.status, message: e.message});
     }
   }
 }

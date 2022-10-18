@@ -10,8 +10,8 @@ services:
 
   Contexts.products.application.ProductManager:
     class: ../../../contexts/products/application/ProductManager
-    arguments: ["@Contexts.products.infrastructure.ProductRepository"]
+    arguments: ["@Contexts.products.infrastructure.repositories.ProductRepository"]
 
-  Contexts.products.infrastructure.ProductRepository:
-    class: ../../../contexts/products/infrastructure/ProductRepository
+  Contexts.products.infrastructure.repositories.ProductRepository:
+    class: ../../../contexts/products/infrastructure/repositories/ProductRepository
     arguments: [""]

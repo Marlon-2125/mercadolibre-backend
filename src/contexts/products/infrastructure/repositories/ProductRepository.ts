@@ -1,5 +1,5 @@
-import {IProductRepository} from '../domain/contracts/IProductRepository';
-import {URL_ENDPOINTS} from '../../../apps/utils/Constants';
+import {IProductRepository} from '../../domain/contracts/IProductRepository';
+import {URL_ENDPOINTS} from '../../../../apps/utils/Constants';
 import axios from 'axios';
 
 export class ProductRepository implements IProductRepository {

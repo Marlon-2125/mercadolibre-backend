@@ -1,5 +1,6 @@
 import {ProductManager} from '../../../../src/contexts/products/application/ProductManager';
 import {ProductRepositoryMock} from '../__mocks__/ProductRepositoryMock';
+import {input} from '../__mocks__/mocks/ResponseMocks';
 
 let repository: ProductRepositoryMock;
 let manager: ProductManager;
@@ -11,13 +12,11 @@ beforeEach(() => {
 
 describe('ProductManager', () => {
   describe('GetItemProduct', () => {
-    it('should find a valid product', async () => {
-      const itemId = 'MLA1118725350';
+    it('should return a valid product response', async () => {
+      const itemId = input.idSuccessFlow;
       const productFinded = await manager.searchById(itemId);
       expect(productFinded.item.id).toEqual(itemId);
     });
-
-    it('should find a ')
   });
 
   describe('ListItemsProducts', () => {
