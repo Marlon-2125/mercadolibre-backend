@@ -16,3 +16,8 @@ export const URL_IMAGES = {
   URL: 'https://http2.mlstatic.com/D_NQ_NP_767602-',
   IMAGE_SIZE: '-V.webp'
 };
+
+export const ERROR_MESSAGES = {
+  BAD_ITEM_ID: 'El itemId no debe estar vacío o ser nulo',
+  BAD_TERM: 'El término no debe estar vacío o ser nulo'
+};

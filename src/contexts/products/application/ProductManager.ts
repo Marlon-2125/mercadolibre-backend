@@ -5,7 +5,7 @@ import {ProductDetailed} from '../domain/entities/ProductDetailed';
 import {ProductListDTO} from '../infrastructure/rest/controllers/dto/ProductListDTO';
 import {ProductItemDTO} from '../infrastructure/rest/controllers/dto/ProductItemDTO';
 import {Logger} from 'tslog';
-import {AUTHOR, URL_IMAGES} from '../../../apps/utils/Constants';
+import {AUTHOR, ERROR_MESSAGES, URL_IMAGES} from '../../../apps/utils/Constants';
 import {ApiError} from '../domain/errors/Error';
 import httpStatus from 'http-status';
 
@@ -19,8 +19,8 @@ export class ProductManager implements IProductManager {
   }
 
   async searchById(itemId: string): Promise<ProductItemDTO> {
-    if (itemId === null || itemId === '') {
-      const messageError = 'El itemId no debe estar vacío o ser nulo';
+    if (itemId === '') {
+      const messageError = ERROR_MESSAGES.BAD_ITEM_ID;
       this.logger.error('[Error in ProductManager]: ' + messageError);
       throw new ApiError({status: httpStatus.BAD_REQUEST, message: messageError});
     }
@@ -57,8 +57,8 @@ export class ProductManager implements IProductManager {
   }
 
   async searchByTerm(term: string): Promise<ProductListDTO> {
-    if (term === null || term === '' || term === undefined) {
-      const messageError = 'El término no debe estar vacío o ser nulo';
+    if (term === '') {
+      const messageError = ERROR_MESSAGES.BAD_TERM;
       this.logger.error('[Error in ProductManager]: ' + messageError);
       throw new ApiError({status: httpStatus.BAD_REQUEST, message: messageError});
     }
